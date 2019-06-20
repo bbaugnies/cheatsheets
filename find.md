@@ -48,6 +48,12 @@ find <path> <conditions> <actions>
 -newerXt "1 hour ago"    # [t]imestamp
 ```
 
+```bash
+-perm 0124       # Exactly these permission bits
+-perm -0124      # All these permission bits (can have more)
+-perm /0124      # Any of these permission bits (can have more)
+```
+
 ### Condition flow
 
 ```bash
@@ -72,4 +78,8 @@ find . -name '*.jpg' -exec rm {} \;
 
 ```bash
 find . -newerBt "24 hours ago"
+```
+
+```bash
+find . -type f -perm -4000    # Find files with SUID set
 ```
